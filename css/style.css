@@ -1,0 +1,464 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Fraunces:opsz,wght@9..144,700;9..144,900&display=swap');
+
+:root{
+    --clr--Verydarkdesaturatedblue: hsl(212, 27%, 19%);
+    --clr--Verydarkgrayishblue: hsl(213, 9%, 39%);
+    --clr--Darkgrayishblue: hsl(232, 10%, 55%);
+    --clr--Grayishblue: hsl(210, 4%, 67%);
+    --clr--White: hsl(0, 0%, 100%);
+
+    --clr--Softred: hsl(7, 99%, 70%);
+    --clr--Yellow: hsl(51, 100%, 49%);
+    --clr--Darkdesaturatedcyan: hsl(167, 40%, 24%);
+    --clr--Darkblue: hsl(198, 62%, 26%);
+    --clr--Darkmoderatecyan: hsl(168, 34%, 41%);
+
+    --ff-accent:'Fraunces', serif;
+    --ff-base:'Barlow', sans-serif;
+
+    --fw-regular:500;
+    --fw-bold:700;
+}
+
+/*
+    1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after{
+    box-sizing:border-box;
+}
+/*
+    2. Remove default margin
+*/
+*{
+    margin:0;
+}
+/*
+    3. Allow percentage-based heights in the application
+*/
+html,
+body{
+    height:100%;
+}
+/*
+    Typographic tweaks!
+    4. Add accessible line-height
+    5. Improve text rendering
+*/
+body{
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+}
+/*
+    6. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg{
+    display:block;
+    max-width:100%;
+}
+/*
+    7. Remove built-in form typography styles
+*/
+a,
+input,
+button,
+textarea,
+select{
+    font:inherit;
+}
+/*
+    8. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+    overflow-wrap:break-word;
+}
+
+h1,
+h2,
+h3{
+    line-height:1;
+}
+
+/* Start Coding */
+
+.header{
+    color: white;
+    font-family:var(--ff-base);
+
+    min-height: 100vh;
+    background-image: url("../images/mobile/image-header.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.header .header-container{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;    
+    
+
+    padding: 1rem;
+}
+
+.header-container .nav{
+    width: 100%;
+    margin-top: 3em;
+    background-color: var(--clr--White);
+
+    display: none;
+}
+
+.fixed{
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+
+}
+
+.header-container .show-menu{
+    display: flex;
+    flex-flow: column nowrap;
+    text-align: center; 
+
+    transition: all 0.2s ease-in-out;
+}
+
+.header-container .creative{
+    position: absolute;
+    top:30%;
+    width: 100%;
+    left:0;
+
+    display:flex;
+    flex-flow: column nowrap;
+    text-align: center;
+    align-items: center;
+
+    gap: 1rem;
+}
+
+.header-container .creative-disappear{
+    display: none;
+}
+
+
+.header-container .creative .creative-text{
+    font-size: clamp(3rem, 1.5vw, 5rem);
+    font-family: var(--ff-accent);
+}
+
+.header-container .creative .creative-photo{
+    width: 100%;
+}
+
+.header-container .btn-menu{
+    background-color: transparent;
+    border: 0rem solid;
+}
+
+.header-container .menu-item{
+    margin: 1rem 0;
+}
+
+.header-container .item{
+    text-decoration:none;
+    color: var(--clr--Darkgrayishblue);
+}
+
+.header-container .btn-item{
+    background-color: var(--clr--Yellow);
+    border: 0 solid;
+    width: 8rem;
+    height: 3rem;
+    border-radius: 1.5rem;
+
+    font-family: var(--ff-accent);
+    font-size: 0.9rem;
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--clr--White);
+}
+
+.main .section{
+    display: flex;
+    flex-direction: column;  
+    
+}
+
+.main .section  .padding{
+    padding: 1rem;
+}
+
+.main .reverse{
+    flex-direction: column-reverse;
+}
+
+.main .section .section-parts{
+    display: flex;
+    flex-flow: column nowrap;
+    text-align: center;
+    gap: 1.5rem;
+
+    width: 100%;
+    margin: auto;
+}
+
+.main .section .section-parts .section-header{
+    font-family: var(--ff-accent);
+    font-weight: 900;
+    font-size: 2rem;
+    line-height: 2.5rem;
+}
+
+.main .section .section-parts .section-text{
+    box-sizing: border-box;
+    font-family: var(--ff-base);
+    color: var(--clr--Darkgrayishblue);
+    font-size: 1rem;
+    line-height: 1.7rem;
+}
+
+.main .section .section-parts .btn-button{
+    font-family: var(--ff-accent);
+    background-color: transparent;
+    border: 0 solid;
+    text-decoration: underline var(--clr--Yellow);
+}
+
+.main .section  .image-graphic{
+    background-image: url("../images/mobile/image-graphic-design.jpg");
+}
+
+.main .section  .image-orange{
+    background-image: url("../images/mobile/image-photography.jpg");
+}
+
+.main .section  .back-image{
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    justify-content: flex-end;
+    color:var(--clr--Darkdesaturatedcyan);
+    
+}
+
+.main .people{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    text-align: center;
+    gap: 3rem;
+    margin-top: 3rem;
+    padding: clamp(1rem, 4vw, 4rem);
+}
+
+.main .people .testimonials{
+    font-family: var(--ff-accent);
+    color: var(--clr--Grayishblue);
+    font-size: 1.2rem;
+    letter-spacing: 0.2rem;
+    font-weight: 900;
+}
+
+.main .people .picture .people-image{
+    border-radius: 50%;
+    width: 5rem;
+}
+
+.main .people .people-text{
+    font-family: var(--ff-base);
+    color: var(--clr--Darkblue);
+    font-size: clamp(1rem, 4vw, 1.5rem);
+}
+
+.main .people .people-name{
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1rem;
+}
+
+.main .people .people-name-header{
+    font-family: var(--ff-accent);
+    color: black;
+    font-size: clamp(1rem, 4vw, 1.5rem);
+}
+
+.main .people .people-name-text{
+    font-family: var(--ff-base);
+    color: var(--clr--Grayishblue);
+    font-size: clamp(0.8rem, 4vw, 1.2rem);
+}
+
+.main .photos{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.main .photo-item .photo{
+    width: 100%;
+}
+
+.footer{
+    background-color: rgb(144, 212, 197);
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    text-align: center;
+    gap: 4rem;
+
+    padding: 4rem;
+}
+
+.footer .icon-footer{
+    width: 10rem;
+    display: block;
+    margin: auto;
+}
+
+.footer .footer-item-container{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    gap: 3rem;
+
+    color: var(--clr--Darkmoderatecyan);
+    font-family: var(--ff-base);
+}
+
+.footer .footer-photo-container{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.btn-item, .btn-menu, .btn-button, .footer-item, .footer-photo-item:hover{
+    cursor: pointer;
+}
+
+.footer-item:hover{
+    color: white;
+}
+
+.footer-photo-item:hover{
+    filter: brightness(0) invert(1);
+}
+
+
+
+
+
+
+@media screen and (min-width: 50rem) {
+    .header {
+      background-image: url("../images/desktop/image-header.jpg");
+    }
+
+    .header-container .btn-menu{
+        display: none;
+    }
+
+    .header-container .nav{
+        display: block;
+        flex-flow: row nowrap;        
+        margin-top: 0em;
+        width: auto;
+
+        background-color: transparent;        
+    }
+
+    .header-container .btn-item{
+        background-color: white;
+        color: black;
+    }
+    
+    .header-container .menu-item{
+        margin: -1rem 2rem;
+        
+    }
+    .header-container .item{
+        color: white;
+        font-size: 1.2rem;
+    }
+
+    .main .section{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .main .people-container{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .main .section  .padding{
+        padding: 1rem clamp(1rem, 8vw, 10rem);       
+    }    
+
+    .main .section .section-parts{
+        text-align: left;
+    }
+
+    .main .section .section-parts .section-header{
+        font-size: clamp(2rem, 4vw, 5rem);
+        line-height: clamp(2.5rem, 5vw, 5rem);
+    }
+    
+
+    .main .section .section-parts .section-text{
+        font-size: clamp(0.8rem, 1.5vw, 5rem);
+        line-height:clamp(1.4rem, 3vw, 5rem);
+    }
+
+    .main .section  .back-image{
+        text-align: center;
+    }
+
+    .main .section .section-parts .btn-button{
+        text-align: left;
+        font-size: clamp(0.8rem, 1.5vw, 5rem);
+    }
+
+    .main .photos{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    .btn-item:hover{
+        background-color: var(--clr--Yellow);
+        color: white;
+    }
+}
+
+@media screen and (min-width: 87.5rem) {
+    /*.main .section  .padding{
+        padding: 10rem;
+    }
+
+    .main .section .section-parts{
+        gap: 3rem;
+    }*/
+}
